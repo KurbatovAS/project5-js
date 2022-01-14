@@ -15,6 +15,11 @@
 <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.1333" d="M8.533 23.467l14.933-14.933"></path>
 </symbol>
 
+<symbol id="icon-top-arrow" viewBox="0 0 32 32">
+<path stroke-width="2.6667" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" d="M6.667 16h18.667"></path>
+<path stroke-width="2.6667" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" d="M16 25.333l9.333-9.333-9.333-9.333"></path>
+</symbol>
+
 
 
 </defs>
