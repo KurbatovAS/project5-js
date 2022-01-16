@@ -12,11 +12,11 @@ function toggleTheme(e) {
   if (refs.checkboxEl.checked) {
     localStorage.setItem('theme', 'dark-theme');
     currentTheme = 'dark-theme';
-    modal.classList.add('dark-theme') 
+    modal.classList.toggle('dark-theme') 
   } else {
     localStorage.setItem('theme', 'light-theme');
     currentTheme = 'light-theme'
-    modal.classList.remove('dark-theme')
+    modal.classList.toggle('dark-theme')
   }
 }
 if (currentTheme === 'dark-theme')

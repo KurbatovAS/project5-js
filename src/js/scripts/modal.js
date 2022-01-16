@@ -41,10 +41,10 @@ function onOpenModal(e) {
   console.log(movieTitle);
   //  console.log(currentTheme);
   if ( currentTheme === 'dark-theme') {
-    modal.classList.add('dark-theme');
+    modal.classList.toggle('dark-theme');
     // movieTitle.classList.add('dark-theme') 
   } else {
-    modal.classList.remove('dark-theme'); 
+    modal.classList.toggle('light-theme'); 
   }
   
   window.addEventListener('keydown', onEscKeyPress);
@@ -57,22 +57,18 @@ function onOpenModal(e) {
 
   const currentFilmId = Number(e.target.id);
   
- return JSON.parse(localStorage.getItem("currentPage")).map(films => {
+  return JSON.parse(localStorage.getItem("currentPage")).map(films => {
     films.forEach(film => {
-
-      if (currentFilmId=== film.id) {
    
-      const markupModal = movieCard(film);
-      
-      refs.modalmarkupEl.innerHTML = '';
-      refs.modalmarkupEl.insertAdjacentHTML('beforeend', markupModal);
-      refs.bodyEl.classList.add('show-modal');
-<<<<<<< Updated upstream
-    }  
-     })
-=======
-     }  
+      if (currentFilmId === film.id ) {
+         
+       const markupModal = movieCard(film);
+       
+       refs.modalmarkupEl.innerHTML = '';
+       refs.modalmarkupEl.insertAdjacentHTML('beforeend', markupModal);
+       refs.bodyEl.classList.add('show-modal');
+      }  
+    })
    })
->>>>>>> Stashed changes
-  })
-}
+ }
+ 

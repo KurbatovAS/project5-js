@@ -43,7 +43,7 @@ body.show-modal .modal {
   background-color: $main-color;
 
   box-shadow: $shadow;
-
+  transition: $time;
   transform: scale(1.1);
   transition: transform 200ms ease-in-out;
 
@@ -58,36 +58,33 @@ body.show-modal .modal {
   }
   &.dark-theme {
     background-color: $dark-theme-color;
-    color:$white-color
-    }
-  &.modal__icon.dark-theme{
-    stroke: $white-color;
+    transition: $time
   }
-  &.dark-theme.movies__title{
+  &.dark-theme .movies__description,
+  &.dark-theme .movies__title,
+  &.dark-theme .movies-info__value,
+  &.dark-theme .movies__info,
+  &.dark-theme .movies-btn__button {
     color: $white-color;
+    transition: $time
   }
-  &.modal__btn.dark-theme{
-    color: $white-color
+  &.dark-theme .movies-btn__button {
+    border-radius: 1px;
+    border: 1px solid;
+    border-color: $accent-color;
+  }
+
+ &.dark-theme .movies-btn:hover{     
+     border: none;
+     transition: $time}
+  &.dark-theme .modal__icon{
+    stroke:$white-color;
+    transition: $time
+  }
+  &.light-theme {
+    transition: $time;
   }
 }
-.movies__title.dark-theme{
-  color: $white-color;
-}
-
-// .modal__btn.dark-theme{
-//   color: $white-color
-// }
-
-// .modal.light-theme {
-//   background-color: $main-color;
-// }
-// .modal.dark-theme {
-// background-color: $dark-theme-color;
-// color:$white-color
-// }
-
-
-
 
 .modal__btn {
   position: absolute;
@@ -149,11 +146,7 @@ body.show-modal .modal {
     line-height: 1.17;
   }
 }
-.movies__title .dark-theme{
-  // background-color: $dark-theme-color;
-  color:$white-color;
 
-  }
 .movies-info__item {
   display: flex;
   align-items: center;
@@ -241,4 +234,3 @@ body.show-modal .modal {
   background-color: $accent-color;
   border-radius: 5px;
 }
-
