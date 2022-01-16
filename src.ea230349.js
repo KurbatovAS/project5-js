@@ -36,4 +36,4 @@ var t=arguments[3],n="Expected a function",e=NaN,i="[object Symbol]",r=/^\s+|\s+
 },{"./refs":"A16n"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/scripts/search"),require("./js/scripts/pagination"),require("./js/scripts/local-storage"),require("./js/scripts/modal"),require("./js/scripts/scrollToTop"),require("./js/scripts/toggle-theme");
 },{"./sass/main.scss":"clu1","./js/scripts/search":"WUrd","./js/scripts/pagination":"V6j5","./js/scripts/local-storage":"bGzK","./js/scripts/modal":"SOUd","./js/scripts/scrollToTop":"txGN","./js/scripts/toggle-theme":"gMlX"}]},{},["Focm"], null)
-//# sourceMappingURL=/project6/src.729a9d78.js.map
+//# sourceMappingURL=/project6/src.ea230349.js.map
