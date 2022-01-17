@@ -63,4 +63,4 @@ var t=arguments[3],n="Expected a function",e=NaN,i="[object Symbol]",r=/^\s+|\s+
 },{"./refs":"A16n"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/scripts/search"),require("./js/scripts/library"),require("./js/scripts/pagination"),require("./js/scripts/local-storage"),require("./js/scripts/modal"),require("./js/scripts/scrollToTop"),require("./js/scripts/toggle-theme"),require("./js/scripts/header");
 },{"./sass/main.scss":"clu1","./js/scripts/search":"WUrd","./js/scripts/library":"dDos","./js/scripts/pagination":"V6j5","./js/scripts/local-storage":"bGzK","./js/scripts/modal":"SOUd","./js/scripts/scrollToTop":"txGN","./js/scripts/toggle-theme":"gMlX","./js/scripts/header":"xURr"}]},{},["Focm"], null)
-//# sourceMappingURL=/project6/src.60d6b772.js.map
+//# sourceMappingURL=/project6/src.d78aedbc.js.map
