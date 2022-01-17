@@ -1,11 +1,8 @@
 import { refs } from './refs';
 import movieCard from '../templates/modal.hbs';
 
-
 refs.openModalEl.addEventListener('click', onOpenModal);
 refs.backdropEl.addEventListener('click', onBackdropClick);
-
-
 
 function onEscKeyPress(event) {
   const ESC_KEY_CODE = 'Escape';
@@ -26,25 +23,18 @@ function onCloseModal() {
 }
 
 function onBackdropClick(event) {
-
   if (event.currentTarget === event.target) {
     onCloseModal();
   }
-}const modal = document.querySelector('.modal')
-// let currentTheme = localStorage.getItem('theme');
+}
 
 function onOpenModal(e) {
   e.preventDefault();
-  
-// const movieIcon = document.querySelector('.modal__icon') 
-   const movieTitle =  document.querySelectorAll('.movies__title')
-  console.log(movieTitle);
-  //  console.log(currentTheme);
+
   if ( currentTheme === 'dark-theme') {
-    modal.classList.toggle('dark-theme');
-    // movieTitle.classList.add('dark-theme') 
+   refs.modalWindowEl.classList.add('dark-theme');
   } else {
-    modal.classList.toggle('light-theme'); 
+    refs.modalWindowEl.classList.remove('dark-theme'); 
   }
   
   window.addEventListener('keydown', onEscKeyPress);

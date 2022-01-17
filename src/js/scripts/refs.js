@@ -24,6 +24,7 @@ const refs = {
   modalmarkupEl: document.querySelector('.modal__markup'),
   bodyEl: document.querySelector('body'),
   backdropEl: document.querySelector('.js-backdrop'),
+  modalWindowEl: document.querySelector('.modal'),
 
   // theme(day/night)
   checkboxEl: document.getElementById('checkbox'),
