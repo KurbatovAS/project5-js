@@ -69,4 +69,4 @@ module.exports=[{name:"Андрей Курбатов",title:"andrey kurbatov",ro
 },{"./refs":"A16n","./templates/teamtemplate.hbs":"Dnb7","./templates/team.json":"gJdF"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/scripts/header"),require("./js/scripts/search"),require("./js/scripts/pagination"),require("./js/scripts/local-storage"),require("./js/scripts/modal"),require("./js/scripts/scrollToTop"),require("./js/scripts/sort"),require("./js/scripts/toggle-theme"),require("./js/scripts/team-modal");
 },{"./sass/main.scss":"clu1","./js/scripts/header":"xURr","./js/scripts/search":"WUrd","./js/scripts/pagination":"V6j5","./js/scripts/local-storage":"bGzK","./js/scripts/modal":"SOUd","./js/scripts/scrollToTop":"txGN","./js/scripts/sort":"iWld","./js/scripts/toggle-theme":"gMlX","./js/scripts/team-modal":"Gh53"}]},{},["Focm"], null)
-//# sourceMappingURL=/project6/src.684026ca.js.map
+//# sourceMappingURL=/project6/src.dbadb91c.js.map
