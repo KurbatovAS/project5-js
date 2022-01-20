@@ -5,9 +5,12 @@ import { refs } from './refs';
 import movieCard from '../templates/modal.hbs';
 import trailer from '../API/fetchTrailer';
 import { currentTheme } from './toggle-theme';
+import FilmsStorage from './local-storage';
 
 refs.openModalEl.addEventListener('click', onOpenModal);
 refs.backdropEl.addEventListener('click', onBackdropClick);
+
+const filmsStorage = new FilmsStorage();
 
 function onEscKeyPress(event) {
   const ESC_KEY_CODE = 'Escape';
@@ -58,9 +61,82 @@ function onOpenModal(e) {
       refs.modalmarkupEl.innerHTML = '';
       refs.modalmarkupEl.insertAdjacentHTML('beforeend', markupModal);
       refs.bodyEl.classList.add('show-modal');
-  
-      trailer.onPlayTrailer(document.querySelectorAll('.playTrailer'));
-      }  
+
+      // WORK WHIS LS
+      const addToWathedBtn = document.querySelector('[data-action="addToWatched"]');
+      const addToQueueBtn = document.querySelector('[data-action="addToQueue"]');
+//addToWathedBtn
+      if(filmsStorage.watchedFilms.some( watched => watched['id'] === film.id)){
+        addToWathedBtn.classList.add('movies-btn__button--current');
+        onRemoveWatchedBtn(addToWathedBtn)
+      }else{
+        addToWathedBtn.classList.remove('movies-btn__button--current');
+        onAddWatchedBtn(addToWathedBtn)
+      }
+//addToQueueBtn
+      if(filmsStorage.filmsQueue.some( queue => queue['id'] === film.id)){
+        addToQueueBtn.classList.add('movies-btn__button--current');
+        onRemoveQueueBtn(addToQueueBtn)
+      }else{
+        addToQueueBtn.classList.remove('movies-btn__button--current');
+        onAddQueueBtn(addToQueueBtn)
+      }
+//onAddToWatched
+      addToWathedBtn.addEventListener('click', onAddToWatched)
+      function onAddToWatched(){
+        if(!addToWathedBtn.classList.contains('movies-btn__button--current')){
+          addToWathedBtn.classList.add('movies-btn__button--current');
+          onRemoveWatchedBtn(addToWathedBtn);
+          filmsStorage.addToWatchedFilm(film);  
+          refs.noMoviesEl.classList.add("visually-hidden");
+        }else{
+          const index = filmsStorage.watchedFilms.findIndex(film => film.id == currentFilmId);
+          filmsStorage.removeWathedFilm(index);
+          addToWathedBtn.classList.remove('movies-btn__button--current');
+          onAddWatchedBtn(addToWathedBtn)
+        }   
+
+        if(refs.watchedEl.classList.contains('btn-activ') && refs.myLibEl.classList.contains('nav-list__link--current')){
+          filmsStorage.showWatchedFilms();
+        }     
+      }
+//onAddToQueue
+      addToQueueBtn.addEventListener('click', onAddToQueue)
+        function onAddToQueue(){
+          if(!addToQueueBtn.classList.contains('movies-btn__button--current')){
+            addToQueueBtn.classList.add('movies-btn__button--current');
+            onRemoveQueueBtn(addToQueueBtn)
+            filmsStorage.addToQueue(film);
+          }else{
+            const index = filmsStorage.filmsQueue.findIndex(film => film.id == currentFilmId);
+            filmsStorage.removeFromQueue(index);
+            addToQueueBtn.classList.remove('movies-btn__button--current');
+            onAddQueueBtn(addToQueueBtn)
+         }    
+
+          if(refs.queueEl.classList.contains('btn-activ') && refs.myLibEl.classList.contains('nav-list__link--current')){
+            filmsStorage.showFilmsQueue();
+          }
+        }
+    onPlayTrailer
+        trailer.onPlayTrailer(document.querySelectorAll('.playTrailer'));
+        }  
      })
   })
+}
+
+function onRemoveWatchedBtn(addToWathedBtn) {
+    addToWathedBtn.textContent = "Remove from watched";
+  }
+
+function onAddWatchedBtn(addToWathedBtn) {
+    addToWathedBtn.textContent = "Add to watched";
+  }
+
+function onRemoveQueueBtn(addToQueueBtn) {
+  addToQueueBtn.textContent = "Remove from queue";
+}
+
+function onAddQueueBtn(addToQueueBtn) {
+  addToQueueBtn.textContent = "Add to queue";
 }
