@@ -27,7 +27,7 @@ export default function handleMovieCard(movies) {
     //----------------------------------------------------
     if (typeof elem.genre_ids === 'string') {
       let bufArr = elem.genre_ids.split(',');
-      console.log('bufArr=', bufArr);
+      console.log('bufArr=', (bufArr));
       elem.genre_ids = bufArr;
     }
     console.log('typeof elem.genre_ids=', typeof elem.genre_ids);

@@ -182,4 +182,11 @@
 
 .movies__thumb {
   position: relative;
+  max-width: 320px;
+  @media screen and (min-width: $desktop) {
+    max-width: 303px;
+  }
+  @media screen and (min-width: 1400px) {
+    max-width: 315px;
+  }
 }
