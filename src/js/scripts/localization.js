@@ -90,6 +90,6 @@ export function changeModalLanguage() {
     addQueue.textContent = `${modalLang.addQueue.en}`;
   }
 }
-console.log(refs.modalAuth); 
+
 
 export { langs };

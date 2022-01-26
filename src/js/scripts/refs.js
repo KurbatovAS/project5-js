@@ -212,6 +212,7 @@ const refs = {
   // ],
 
   //location
+  langwrapEl: document.querySelector('.langWrap'),
   enEl: document.querySelector('#englishLink'),
   ruEl: document.querySelector('#russianLink'),
   ukEl: document.querySelector('#ukrainianLink'),

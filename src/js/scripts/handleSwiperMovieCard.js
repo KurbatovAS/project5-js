@@ -18,7 +18,17 @@ export default function handleSwiperMovieCard(movies) {
         .slice(0, 2)
         .join(', ');
     } else {
-      elem.genre_ids = 'Unknown';
+      let unknown = "Unknown"
+      if (langs === 'ru') {
+        unknown = "Неизвестно"
+      }
+      if (langs === 'uk') {
+        unknown = 'Невідомо';
+      }
+      if (langs === 'en') {
+        unknown = "Unknown"
+      }
+      elem.genre_ids = unknown;
     }
 
     

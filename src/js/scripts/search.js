@@ -17,6 +17,7 @@ import { onRenderPagination } from '../scripts/pagination';
 import FetchNowPlayingMovies from '../API/fetchNowPlayingMovies';
 import handleSwiperMovieCard from './handleSwiperMovieCard';
 
+
 export default onRenderPopularMoviesMarkup;
 
 const apiSearchData = new FetchSearchMovie();
