@@ -96,7 +96,7 @@ btnCloseForm.addEventListener('click', () => {
 });
 /////////////////////////////////////////////////
 btnSubmit.addEventListener('click', e => {
-  console.dir(btnSubmit);
+ // console.dir(btnSubmit);
   if (
     btnSubmit.textContent === 'Sign Up' ||
     btnSubmit.textContent === 'Зареєструватись' ||
